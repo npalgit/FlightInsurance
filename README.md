@@ -18,8 +18,7 @@ Start the services
 
 ```sh
 docker-compose up -d
-
-
+```
 
 ## Indices
 
