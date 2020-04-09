@@ -55,31 +55,31 @@ FlightInsuranceSchema.path('email').validate(function(email) {
 }, 'Email `{VALUE}` already exists');
 
 FlightInsuranceSchema.path('flightDelayReasonDescription').validate(function(flightDelayReasonDescription) {
-    if (this.flightDelayReason == interruptionReasons.Other && !flightDelayReasonDescription) {
+    if (this.flightDelayReason == interruptionReasons.Other) {
         return flightDelayReasonDescription.length;
     }
-    return false;
+    return true;
 }, 'You must provide a description when the flight interruption reason is Other.');
 
 FlightInsuranceSchema.path('newFightNumber').validate(function(newFightNumber) {
     if (this.flightInterruptionConsequence == interruptionConsequences.Cancellation) {
         return newFightNumber > 0;
     }
-    return false;
+    return true;
 }, 'You must provide a new flight number when the flight is cancelled.');
 
 FlightInsuranceSchema.path('newFightDate').validate(function(newFightDate) {
     if (this.flightInterruptionConsequence == interruptionConsequences.Delay) {
         return moment(newFightDate, "YYYY-MM-DD").isValid();
     }
-    return false;
+    return true;
 }, 'You must provide a valid new flight date when the flight is delayed.');
 
 FlightInsuranceSchema.path('delayTime').validate(function(delayTime) {
     if (this.flightInterruptionConsequence == interruptionConsequences.Delay) {
         return delayTime.length;
     }
-    return false;
+    return true;
 }, 'You must provide a new flight delay time when the flight is delayed."');
 
 
