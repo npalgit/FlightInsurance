@@ -93,9 +93,3 @@ URL: http://localhost:3000/FlightInsurance
 	"newFightNumber": 789
 }
 ```
-
-
-
----
-[Back to top](#flightinsuranceapi)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-04-09 10:10:39 by [docgen](https://github.com/thedevsaddam/docgen)
