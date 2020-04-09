@@ -2,6 +2,7 @@ const validator = require('validator');
 const moment = require('moment');
 
 exports.createInsuranceValidator = (req, res, next) => {
+    console.log('req body', req.body);
     let firstName = validator.trim(req.body.firstName);
     let lastName = validator.trim(req.body.lastName);
     let email = validator.trim(req.body.email);
