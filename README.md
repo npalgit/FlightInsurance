@@ -2,6 +2,24 @@
 # FlightInsuranceAPi
 
 
+## Instalation
+```sh
+If you are not using docker please install mongo db and start mongo db server
+git clone https://github.com/npalgit/FlightInsurance.git
+npm install
+npm dev
+```
+
+
+## Docker
+You can also use docker for development.
+
+Start the services
+
+```sh
+docker-compose up -d
+
+
 
 ## Indices
 

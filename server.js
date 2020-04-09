@@ -26,11 +26,12 @@ const initApp = () => {
 }
 
 const connect = () => {
+    config.db.setMongoUri();
     mongoose.connection
         .on('error', console.log)
         .on('disconnected', connect)
         .once('open', initApp);
-    return mongoose.connect(config.db.DB_URL, {
+    return mongoose.connect(process.env.MONGO_URI, {
         keepAlive: 1,
         useNewUrlParser: true,
         useUnifiedTopology: true
